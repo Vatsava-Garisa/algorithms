@@ -105,6 +105,30 @@ class MyArray {
         return newArray;
     }
 
+    some(func) {
+        if (!this.length) return;
+
+        let all_follows = false;
+        for (let i = 0; i < this.length; i++) {
+            all_follows = func(this.data[i]);
+            if (all_follows) return true;
+        }
+
+        return false;
+    }
+
+    every(func) {
+        if (!this.length) return;
+
+        let all_follows = true;
+        for (let i = 0; i < this.length; i++) {
+            all_follows = func(this.data[i]);
+            if (!all_follows) return false;
+        }
+
+        return true;
+    }
+
     find(func) {
         if (!this.length) return;
 
@@ -139,6 +163,18 @@ class MyArray {
         return -1;
     }
 
+    lastIndexOf(item) {
+        if (!this.length) return;
+
+        for (let j = this.length - 1; j >= 0; j--) {
+            if (this.data[j] == item) {
+                return j;
+            }
+        }
+
+        return -1;
+    }
+
     concat(arr) {
         let newArray = new MyArray();
 
@@ -146,20 +182,51 @@ class MyArray {
             newArray.push(this.data[i]);
         }
 
+        for (let i = 0; i < arr.length; i++) {
+            newArray.push(arr.get(i));
+        }
 
+        return newArray;
+    }
 
+    includes(item) {
+        if (!this.length) return false;
+
+        for (let i = 0; i < this.length; i++) {
+            if (this.data[i] === item) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    join(separator) {
+        separator = separator ?? ',';
+
+        let str = '';
+
+        for (let i = 0; i < this.length; i++) {
+            str += this.data[i];
+            if (i < this.length - 1) {
+                str += separator;
+            }
+        }
+
+        return str;
+    }
+
+    fill(filler, startIndex = 0, count = this.length) {
+        if (!this.length || startIndex > this.length) return this;
+
+        for (let i = startIndex; i < startIndex + count; i++) {
+            if (!this.data[i]) break;
+            this.data[i] = filler;
+        }
+
+        return this;
     }
 }
 
 let names = new MyArray();
-names.push('Alex');
-names.push('Bron');
-names.push('Cindy');
-names.push('Dan');
-// console.log(names.unshift('Hi'));
-let test = names.findIndex((item) => {
-    if (item.includes('A')) {
-        return item;
-    }
-});
-console.log(test);
+names.push('Alex', 'Bron', 'Cindy', 'Alex');
