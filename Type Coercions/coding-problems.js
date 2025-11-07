@@ -89,164 +89,164 @@
  * Output: true
  */
 
-/** 
+/** console.log([null] == 0); TRICKY (Conversion to Primitive using "ToPrimitive")
  * Predict the output: console.log([null] == 0);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([] == 0);
  * Predict the output: console.log([] == 0);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log({} == "[object Object]");
  * Predict the output: console.log({} == "[object Object]");
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([1, 2] == "1,2");
  * Predict the output: console.log([1, 2] == "1,2");
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([] == ![]); TRICKY
  * Predict the output: console.log([] == ![]);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log(null === undefined); TRICKY
  * Predict the output: console.log(null === undefined);
- * Output: 
+ * Output: false
  */
 
-/** 
+/** console.log(null == undefined); TRICKY
  * Predict the output: console.log(null == undefined);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log("0" == false); TRICKY
  * Predict the output: console.log("0" == false);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log("" == false);
  * Predict the output: console.log("" == false);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([undefined] == 0);
  * Predict the output: console.log([undefined] == 0);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([,] == 0); TRICKY
  * Predict the output: console.log([,] == 0);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([1] > null);
  * Predict the output: console.log([1] > null);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([1] < [2]);
  * Predict the output: console.log([1] < [2]);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log("2" > "12"); TRICKY
  * Predict the output: console.log("2" > "12");
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log("2" > 12);
  * Predict the output: console.log("2" > 12);
- * Output: 
+ * Output: false
  */
 
-/** 
+/** console.log(String({}));
  * Predict the output: console.log(String({}));
- * Output: 
+ * Output: "[object Object]"
  */
 
-/** 
+/** console.log(String([1, 2, 3]));
  * Predict the output: console.log(String([1, 2, 3]));
- * Output: 
+ * Output: 1,2,3
  */
 
-/** 
+/** console.log(String(null));
  * Predict the output: console.log(String(null));
- * Output: 
+ * Output: "null"
  */
 
-/** 
+/** console.log(Boolean([]));
  * Predict the output: console.log(Boolean([]));
- * Output: 
+ * Output: true
  */
 
-/** 
+/**  console.log(Boolean(0));
  * Predict the output: console.log(Boolean(0));
- * Output: 
+ * Output: false
  */
 
-/** 
+/** console.log(Boolean("false"));
  * Predict the output: console.log(Boolean("false"));
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log(Number(undefined));
  * Predict the output: console.log(Number(undefined));
- * Output: 
+ * Output: NaN
  */
 
-/** 
+/** console.log(Number(null));
  * Predict the output: console.log(Number(null));
- * Output: 
+ * Output: 0
  */
 
-/** 
+/** console.log(Number(""));
  * Predict the output: console.log(Number(""));
- * Output: 
+ * Output: 0
  */
 
-/** 
+/** console.log(Number("123"));
  * Predict the output: console.log(Number("123"));
- * Output: 
+ * Output: 123
  */
 
-/** 
+/** console.log([] + []); TRICKY
  * Predict the output: console.log([] + []);
- * Output: 
+ * Output: ""
  */
 
-/** 
+/** console.log([] + {});
  * Predict the output: console.log([] + {});
- * Output: 
+ * Output: "[object Object]"
  */
 
-/** 
+/** console.log({} + []);
  * Predict the output: console.log({} + []);
- * Output: 
+ * Output: "[object Object]"
  */
 
-/** 
+/** console.log(+true);
  * Predict the output: console.log(+true);
- * Output: 
+ * Output: 1
  */
 
-/** 
+/** console.log(+false);
  * Predict the output: console.log(+false);
- * Output: 
+ * Output: 0
  */
 
-/** 
+/** console.log(+[]);
  * Predict the output: console.log(+[]);
- * Output: 
+ * Output: 0
  */
 
-/** 
+/** console.log(+{});
  * Predict the output: console.log(+{});
- * Output: 
+ * Output: 1
  */
 
 /** 

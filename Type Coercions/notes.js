@@ -90,3 +90,18 @@ let NAN = NaN;
  * Number: NaN
  * Boolean: false
  */
+
+/*****************************************************************************************************************************/
+
+/** ==
+ * Loose Equality
+ * Performs type coercion when operands have different type.
+ * Uses ToPrimitive, ToNumber, etc.
+ */
+
+/** ===
+ * Strict Equality
+ * No type coercion at all
+ * The two sides must be of same type to be considered equal.
+ * If types differ then immediately false.
+ */
