@@ -1,4 +1,10 @@
 
+/** Stack
+ * A "stack" is a linear data structure that follows the "Last In, First Out" (LIFO) principle.
+ * You push new elements on top (constant time).
+ * You pop from the top (constant time).
+ */
+
 class Node {
     constructor(data) {
         this.data = data;
@@ -63,9 +69,11 @@ class MyStack {
             return;
         }
 
+        let value = this.head.data;
         this.head = this.head.next;
-
         this.length--;
+
+        return value;
     }
 
     /* Time: O(1) */
@@ -82,7 +90,36 @@ class MyStack {
     isEmpty() {
         return this.length ? false : true;
     }
+
+    /* Stack Iterator */
+    *[Symbol.iterator]() {
+        let current_node = this.head;
+
+        while (current_node) {
+            let value = current_node.data;
+            current_node = current_node.next;
+            yield value;
+        }
+    }
+
+    /* Stack Reverse Iterator */
+    *reverseIterator() {
+        let values = [];
+
+        let current_node = this.head;
+
+        while (current_node) {
+            values.push(current_node.data);
+            current_node = current_node.next;
+        }
+
+        for (let i = values.length - 1; i >= 0; i--) {
+            yield values[i];
+        }
+    }
+
 }
+
 /*****************************************************************************************************************************/
 
 class MyArrayStack {
