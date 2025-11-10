@@ -246,37 +246,37 @@
 
 /** console.log(+{});
  * Predict the output: console.log(+{});
- * Output: 1
+ * Output: NaN
  */
 
-/** 
+/** console.log(!!null == !!undefined);
  * Predict the output: console.log(!!null == !!undefined);
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([] == 0 && 0 == "0" && [] == "0");
  * Predict the output: console.log([] == 0 && 0 == "0" && [] == "0");
- * Output: 
+ * Output: false
  */
 
-/** 
+/** console.log((false || true) && "JS"); TRICKY
  * Predict the output: console.log((false || true) && "JS");
- * Output: 
+ * Output: "JS"
  */
 
-/** 
+/** console.log(0 || "0" && {});
  * Predict the output: console.log(0 || "0" && {});
- * Output: 
+ * Output: {}
  */
 
-/** 
+/** console.log([] + null + 1);
  * Predict the output: console.log([] + null + 1);
- * Output: 
+ * Output: "null1"
  */
 
-/** 
+/** console.log([] == ![]); TRICKY
  * Predict the output: console.log([] == ![]);
- * Output: 
+ * Output: true
  */
 
 /** 
@@ -309,14 +309,14 @@
  * Output: 
  */
 
-/** 
+/** console.log([undefined] == "");
  * Predict the output: console.log([undefined] == "");
- * Output: 
+ * Output: false
  */
 
-/** 
+/** console.log([1, 2] + [3, 4]);
  * Predict the output: console.log([1, 2] + [3, 4]);
- * Output: 
+ * Output: "1,23,4"
  */
 
 /** 
@@ -339,9 +339,9 @@
  * Output: 
  */
 
-/** 
+/** console.log(0 == "\n"); TRICKY
  * Predict the output: console.log(0 == "\n");
- * Output: 
+ * Output: true
  */
 
 /** 

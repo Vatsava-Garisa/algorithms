@@ -10,14 +10,14 @@ let obj = { "A": 1, "B": 2 };
 let empty_obj = {};
 /**
  * String: '[object Object]'
- * Number: 0
+ * Number: NaN
  * Boolean: true
  */
 
 let arr = ["A", 2, true];
 /**
  * String: 'A,2,true'
- * Number: 1
+ * Number: NaN (['2104'] => 2104 | [21,04] => NaN)
  * Boolean: true
  */
 
@@ -38,7 +38,7 @@ let str = "Sree";
 let empty_str = '';
 /**
  * String: ''
- * Number: NaN ('2104' => 2104)
+ * Number: 0 ('2104' => 2104)
  * Boolean: false
  */
 
@@ -94,14 +94,41 @@ let NAN = NaN;
 /*****************************************************************************************************************************/
 
 /** ==
- * Loose Equality
+ * Abstract Equality
  * Performs type coercion when operands have different type.
  * Uses ToPrimitive, ToNumber, etc.
+ * "Can I make you look the same by converting one of you?"
  */
+
+/** Coercion rules for the == operator. (Same for !=)
+ * 
+ * if (Type(x) === Type(y)) return StrictEquality(x, y);
+ * if (x is undefined && y is null) return true;
+ * 
+ * if (Type(x) is Number && Type(y) is String)
+ * return x == ToNumber(y);
+ * if (Type(x) is String && Type(y) is Number)
+ * return ToNumber(x) == y;
+ * 
+ * if (Type(x) is Boolean)
+ * return ToNumber(x) == y;
+ * if (Type(y) is Boolean)
+ * return x == ToNumber(y);
+ * 
+ * if (Type(x) is Object and Type(y) is Primitive)
+ * return ToPrimitive(x) == y;
+ * if (Type(y) is Object and Type(x) is Primitive)
+ * return x == ToPrimitive(y);
+ * 
+ * return false;
+ */
+
+/*****************************************************************************************************************************/
 
 /** ===
  * Strict Equality
  * No type coercion at all
  * The two sides must be of same type to be considered equal.
  * If types differ then immediately false.
+ * "Are you the same type and the same value/reference?" (Same for !==)
  */
