@@ -226,7 +226,40 @@ class MyArray {
 
         return this;
     }
+
+    /* Iterator Implementation - 1 */
+    [Symbol.iterator]() {
+        let index = 0;
+        const self = this;
+        return {
+            next() {
+                let value = self.get(index);
+                if (value) {
+                    index++;
+                    return { value, done: false };
+                }
+                return { done: true };
+            }
+        }
+    }
+
+    /* Iterator Implementation - 2 */
+    *[Symbol.iterator]() {
+        for (let i = 0; i < this.length; i++) {
+            yield this.data[i];
+        }
+    }
+
+    /* Reverse Iterator */
+    *reverseIterator() {
+        for (let i = this.length - 1; i >= 0; i--) {
+            yield this.data[i];
+        }
+    }
 }
 
 let names = new MyArray();
 names.push('Alex', 'Bron', 'Cindy', 'Alex');
+console.log(...names);
+console.log(...names.reverseIterator());
+
