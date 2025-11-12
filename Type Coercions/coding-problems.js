@@ -279,39 +279,41 @@
  * Output: true
  */
 
-/** 
+/** console.log("b" + "a" + +"a" + "a");
  * Predict the output: console.log("b" + "a" + +"a" + "a");
- * Output: 
+ * Output: "baNaNa"
  */
 
-/** 
+/** console.log(!!"false" == !!"true");
  * Predict the output: console.log(!!"false" == !!"true");
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log(false == "0");
  * Predict the output: console.log(false == "0");
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log(true == "true");
  * Predict the output: console.log(true == "true");
- * Output: 
+ * Output: false
  */
 
-/** 
+/** console.log([] == "");
  * Predict the output: console.log([] == "");
- * Output: 
+ * Output: true
  */
 
-/** 
+/** console.log([null] == ""); TRICKY
  * Predict the output: console.log([null] == "");
- * Output: 
+ * Output: true
+ * null or undefined become empty strings when joined.
  */
 
 /** console.log([undefined] == "");
  * Predict the output: console.log([undefined] == "");
- * Output: false
+ * Output: true
+ * undefined or null become empty strings when joined.
  */
 
 /** console.log([1, 2] + [3, 4]);
@@ -319,24 +321,26 @@
  * Output: "1,23,4"
  */
 
-/** 
+/** console.log([] == ![]);
  * Predict the output: console.log([] == ![]);
  * Output: 
  */
 
-/** 
+/** console.log({} + {}); TRICKY
  * Predict the output: console.log({} + {}); // tricky in Node vs browser
  * Output: 
+ * Node - "[object Object][object Object]"
+ * Browser - NaN
  */
 
-/** 
+/** console.log([] + {});
  * Predict the output: console.log([] + {}); // compare with previous one
- * Output: 
+ * Output: '[object Object]'
  */
 
-/** 
+/** console.log("5" + + "5");
  * Predict the output: console.log("5" + + "5");
- * Output: 
+ * Output: "55"
  */
 
 /** console.log(0 == "\n"); TRICKY
@@ -344,9 +348,9 @@
  * Output: true
  */
 
-/** 
+/** console.log([] == 0 && "0" == 0 && [] == "0");
  * Predict the output: console.log([] == 0 && "0" == 0 && [] == "0");
- * Output: 
+ * Output: false
  */
 
 
