@@ -10,6 +10,7 @@ const sort1 = arr.sort();
 console.log('arr:', arr);
 console.log(`sort1:`, sort1);
 
+console.log(`--------------------------------------------------------`);
 
 const nums = [9, 10, 29, -5, 0];
 
